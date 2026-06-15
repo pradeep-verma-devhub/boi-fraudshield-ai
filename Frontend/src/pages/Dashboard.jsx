@@ -19,7 +19,6 @@ export default function Dashboard() {
     <div className="page dashboard-page">
       <h1 className="page-title">User Dashboard</h1>
 
-      {/* Alert Banner */}
       {data.riskScore >= 70 && (
         <div className="alert alert-danger">
           ⚠️ <strong>High Risk Alert:</strong> Your account shows unusual
@@ -27,7 +26,6 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* Top Metrics */}
       <div className="metrics-row">
         <div className="card metric-card risk-card">
           <p className="metric-label">Risk Score</p>
@@ -46,7 +44,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Behaviour Insights */}
       <section className="section">
         <h2 className="section-title">🧠 Behaviour Insights</h2>
         <div className="insights-list">
@@ -59,7 +56,6 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* AI Explanation */}
       <section className="section">
         <h2 className="section-title">🤖 AI Explanation</h2>
         <div className="card ai-card">
@@ -67,7 +63,6 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* Last Transactions */}
       <section className="section">
         <h2 className="section-title">Recent Transactions</h2>
         <div className="table-wrapper">

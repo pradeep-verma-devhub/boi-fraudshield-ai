@@ -12,7 +12,6 @@ export default function Home() {
 
   return (
     <div className="page home-page">
-      {/* Hero */}
       <section className="hero">
         <div className="hero-glow" />
         <h1 className="hero-title">{data.title}</h1>
@@ -24,7 +23,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
       <section className="section">
         <h2 className="section-title">Core Features</h2>
         <div className="card-grid">
@@ -38,7 +36,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Announcements */}
       <section className="section">
         <h2 className="section-title">📢 Announcements</h2>
         <div className="announcements">

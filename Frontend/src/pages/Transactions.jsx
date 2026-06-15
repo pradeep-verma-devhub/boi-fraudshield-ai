@@ -8,7 +8,7 @@ export default function Transactions() {
   const [selected, setSelected] = useState(null);
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(null);
-  const [step, setStep] = useState("idle"); // idle | processing | otp | updating | done
+  const [step, setStep] = useState("idle");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -67,7 +67,6 @@ export default function Transactions() {
         />
       )}
 
-      {/* Status overlays */}
       {step === "processing" && (
         <div className="tx-status processing">
           <div className="spinner" />
@@ -101,7 +100,6 @@ export default function Transactions() {
         </div>
       )}
 
-      {/* Form */}
       {(step === "idle" || step === "otp") && (
         <div className="tx-form-wrapper">
           <div className="card tx-card">

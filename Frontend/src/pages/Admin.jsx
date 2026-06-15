@@ -14,7 +14,6 @@ export default function Admin() {
     <div className="page admin-page">
       <h1 className="page-title">Admin Dashboard</h1>
 
-      {/* Metrics */}
       <div className="metrics-row three-col">
         <div className="card metric-card">
           <p className="metric-label">Total Users</p>
@@ -33,7 +32,6 @@ export default function Admin() {
         </div>
       </div>
 
-      {/* High-Risk Alerts */}
       <section className="section">
         <h2 className="section-title">🚨 High-Risk User Alerts</h2>
         <div className="alert-cards">
@@ -54,7 +52,6 @@ export default function Admin() {
         </div>
       </section>
 
-      {/* All Transactions */}
       <section className="section">
         <h2 className="section-title">All Transactions</h2>
         <div className="table-wrapper">

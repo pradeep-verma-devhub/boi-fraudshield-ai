@@ -4,7 +4,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 const themes = ["dark", "light", "grey"];
 const themeIcons = { dark: "🌙", light: "☀️", grey: "🌫️" };
 
-/* Pages that show the hamburger instead of back-arrow */
 const HOME_ROUTES = new Set(["/", "/dashboard", "/admin"]);
 
 export default function Navbar({ theme, setTheme }) {
@@ -18,12 +17,10 @@ export default function Navbar({ theme, setTheme }) {
   const role = user?.role;
   const isHome = HOME_ROUTES.has(location.pathname);
 
-  /* Close drawer on route change */
   useEffect(() => {
     setDrawerOpen(false);
   }, [location.pathname]);
 
-  /* Close drawer on outside click */
   useEffect(() => {
     const handler = (e) => {
       if (drawerRef.current && !drawerRef.current.contains(e.target)) {
@@ -34,7 +31,6 @@ export default function Navbar({ theme, setTheme }) {
     return () => document.removeEventListener("mousedown", handler);
   }, [drawerOpen]);
 
-  /* Track window width to switch to mobile view */
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1000);
     check();
@@ -55,7 +51,6 @@ export default function Navbar({ theme, setTheme }) {
 
   const navLinks = [
     { to: "/", label: "Home", show: true },
-    // Show Dashboard/Transactions/Profile links in navigation for easy access
     { to: "/dashboard", label: "Dashboard", show: true },
     { to: "/admin", label: "Admin", show: role === "admin" },
     { to: "/transactions", label: "Transactions", show: true },
@@ -65,7 +60,6 @@ export default function Navbar({ theme, setTheme }) {
   return (
     <>
       <nav className="navbar">
-        {/* Left: Hamburger or Back */}
         <div className="navbar-left">
           {isMobile ? (
             <button
@@ -110,7 +104,6 @@ export default function Navbar({ theme, setTheme }) {
           </Link>
         </div>
 
-        {/* Center: Desktop links */}
         <div className="navbar-links">
           {navLinks.filter((l) => l.show).map((l) => (
             <Link
@@ -123,7 +116,6 @@ export default function Navbar({ theme, setTheme }) {
           ))}
         </div>
 
-        {/* Right: Actions */}
         <div className="navbar-actions">
           <button className="theme-btn" onClick={cycleTheme} title={`Theme: ${theme}`}>
             {themeIcons[theme]}
@@ -140,10 +132,9 @@ export default function Navbar({ theme, setTheme }) {
         </div>
       </nav>
 
-      {/* Mobile Drawer Overlay */}
       <div className={`drawer-overlay ${drawerOpen ? "open" : ""}`} onClick={() => setDrawerOpen(false)} />
 
-      {/* Mobile Drawer */}
+      
       <aside className={`drawer ${drawerOpen ? "open" : ""}`} ref={drawerRef}>
         <div className="drawer-header">
           <span className="brand-icon">🛡️</span>

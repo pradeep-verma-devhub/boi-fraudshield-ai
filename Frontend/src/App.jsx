@@ -11,7 +11,6 @@ import Profile from "./pages/Profile";
 export default function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
-  /* Sync data-theme to <html> so body and all elements inherit CSS variables */
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);

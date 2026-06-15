@@ -1,10 +1,7 @@
-/* ═══════════════════════════════════════════════════════════
-   FraudGuard AI — Design System v2
-   Full-theme support · Mobile-first · Drawer nav
-   ═══════════════════════════════════════════════════════════ */
+
 @import "tailwindcss";
 
-/* ── Reset ─────────────────────────────────────────────── */
+
 *,
 *::before,
 *::after {
@@ -13,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* ── Theme Tokens ──────────────────────────────────────── */
+
 :root {
   --font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --radius: 14px;
@@ -23,13 +20,12 @@
   --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.2);
   --nav-h: 64px;
 
-  /* Shared semantic colors */
+ 
   --danger: #ef4444;
   --warning: #f59e0b;
   --success: #22c55e;
 }
 
-/* ─── DARK THEME ───────────────────────────────────────── */
 [data-theme="dark"] {
   --bg:            #0a0e1a;
   --bg-card:       rgba(255, 255, 255, 0.04);
@@ -48,7 +44,7 @@
   --scrollbar-track: transparent;
 }
 
-/* ─── LIGHT THEME ──────────────────────────────────────── */
+
 [data-theme="light"] {
   --bg:            #f8f9fc;
   --bg-card:       #ffffff;
@@ -68,7 +64,7 @@
   --scrollbar-track: transparent;
 }
 
-/* ─── GREY THEME ───────────────────────────────────────── */
+
 [data-theme="grey"] {
   --bg:            #1e1e24;
   --bg-card:       rgba(255, 255, 255, 0.05);
@@ -87,7 +83,7 @@
   --scrollbar-track: transparent;
 }
 
-/* ── Base ──────────────────────────────────────────────── */
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -102,7 +98,6 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
 ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
@@ -120,9 +115,6 @@ body {
 
 a { color: var(--accent); text-decoration: none; }
 
-/* ═══════════════════════════════════════════════════════════
-   NAVBAR
-   ═══════════════════════════════════════════════════════════ */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -172,7 +164,7 @@ a { color: var(--accent); text-decoration: none; }
 }
 .brand-icon { font-size: 1.4rem; }
 
-/* Desktop links */
+
 .navbar-links {
   display: flex;
   gap: 4px;
@@ -218,7 +210,7 @@ a { color: var(--accent); text-decoration: none; }
   transform: rotate(20deg);
 }
 
-/* Responsive: collapse links/actions into hamburger for small screens */
+
 @media (max-width: 1000px) {
   .navbar-links,
   .navbar-actions {
@@ -229,18 +221,17 @@ a { color: var(--accent); text-decoration: none; }
     padding: 0 12px;
   }
 
-  /* Keep brand icon visible but hide full text to save space */
   .navbar-brand .brand-text {
     display: none;
   }
 
-  /* Slightly reduce nav height for compactness */
+
   :root { --nav-h: 56px; }
   .navbar { height: var(--nav-h); }
 }
 
 @media (min-width: 1000px) {
-  /* Ensure desktop always shows links/actions */
+ 
   .navbar-links,
   .navbar-actions {
     display: flex !important;
@@ -251,9 +242,7 @@ a { color: var(--accent); text-decoration: none; }
   }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   MOBILE DRAWER
-   ═══════════════════════════════════════════════════════════ */
+
 .drawer-overlay {
   position: fixed;
   inset: 0;
@@ -376,9 +365,7 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--accent);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   BUTTONS
-   ═══════════════════════════════════════════════════════════ */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -425,9 +412,6 @@ a { color: var(--accent); text-decoration: none; }
   width: 100%;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   PAGE LAYOUT
-   ═══════════════════════════════════════════════════════════ */
 .page {
   max-width: 1120px;
   margin: 0 auto;
@@ -448,7 +432,6 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text-muted);
 }
 
-/* ── Section ───────────────────────────────────────────── */
 .section {
   margin-top: 32px;
 }
@@ -460,9 +443,6 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   CARDS
-   ═══════════════════════════════════════════════════════════ */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -480,9 +460,6 @@ a { color: var(--accent); text-decoration: none; }
   gap: 16px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   HERO
-   ═══════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
   text-align: center;
@@ -543,7 +520,7 @@ a { color: var(--accent); text-decoration: none; }
   border: 1px solid var(--accent);
 }
 
-/* ── Feature Cards ─────────────────────────────────────── */
+
 .feature-card {
   text-align: center;
   padding: 32px 24px;
@@ -563,7 +540,6 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 0.9rem;
 }
 
-/* ── Announcements ─────────────────────────────────────── */
 .announcements {
   display: flex;
   flex-direction: column;
@@ -592,9 +568,7 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 0.9rem;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   LOGIN
-   ═══════════════════════════════════════════════════════════ */
+
 .login-page {
   display: grid;
   place-items: center;
@@ -682,9 +656,7 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 0.8rem;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   METRICS
-   ═══════════════════════════════════════════════════════════ */
+
 .metrics-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -721,7 +693,6 @@ a { color: var(--accent); text-decoration: none; }
   margin-top: 4px;
 }
 
-/* ── Risk Circle ───────────────────────────────────────── */
 .risk-card {
   display: flex;
   flex-direction: column;
@@ -757,9 +728,7 @@ a { color: var(--accent); text-decoration: none; }
   letter-spacing: 0.5px;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ALERT BANNER
-   ═══════════════════════════════════════════════════════════ */
+
 .alert {
   padding: 14px 18px;
   border-radius: var(--radius-sm);
@@ -781,9 +750,6 @@ a { color: var(--accent); text-decoration: none; }
   background: rgba(239, 68, 68, 0.08);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   INSIGHTS
-   ═══════════════════════════════════════════════════════════ */
 .insights-list {
   display: flex;
   flex-direction: column;
@@ -808,7 +774,6 @@ a { color: var(--accent); text-decoration: none; }
   font-size: 0.9rem;
 }
 
-/* ── AI Card ───────────────────────────────────────────── */
 .ai-card {
   border-left: 3px solid var(--accent);
 }
@@ -818,9 +783,7 @@ a { color: var(--accent); text-decoration: none; }
   line-height: 1.7;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   DATA TABLE — full theme aware
-   ═══════════════════════════════════════════════════════════ */
+
 .table-wrapper {
   overflow-x: auto;
   border-radius: var(--radius);
@@ -890,9 +853,6 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--danger);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ADMIN: ALERT CARDS
-   ═══════════════════════════════════════════════════════════ */
 .alert-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -931,9 +891,7 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text-muted);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   TRANSACTIONS PAGE
-   ═══════════════════════════════════════════════════════════ */
+
 .tx-form-wrapper {
   display: flex;
   flex-direction: column;
@@ -1078,7 +1036,8 @@ a { color: var(--accent); text-decoration: none; }
   -webkit-appearance: none;
 }
 
-/* ── Transaction Status ────────────────────────────────── */
+
+
 .tx-status {
   display: flex;
   flex-direction: column;
@@ -1113,9 +1072,7 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   OTP MODAL — full theme
-   ═══════════════════════════════════════════════════════════ */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1206,9 +1163,7 @@ a { color: var(--accent); text-decoration: none; }
   flex: 1;
 }
 
-/* ═══════════════════════════════════════════════════════════
-   PROFILE — full theme
-   ═══════════════════════════════════════════════════════════ */
+
 .profile-page {
   display: flex;
   flex-direction: column;
@@ -1282,11 +1237,8 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--text);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════════ */
 
-/* ── Desktop (≥1000px): links always visible, no hamburger ── */
+
 @media (min-width: 1000px) {
   .nav-icon-btn.hamburger-btn {
     display: none;
@@ -1300,7 +1252,7 @@ a { color: var(--accent); text-decoration: none; }
   }
 }
 
-/* ── Mobile (<1000px): hamburger + drawer ────────────────── */
+
 @media (max-width: 999px) {
   :root {
     --nav-h: 56px;
@@ -1397,7 +1349,7 @@ a { color: var(--accent); text-decoration: none; }
   }
 }
 
-/* ── Extra Small (≤480px) ──────────────────────────────── */
+
 @media (max-width: 480px) {
   .hero-badges {
     flex-direction: column;

@@ -1,6 +1,5 @@
 const BASE_URL = "http://localhost:3000";
 
-// ─── Dummy Data ──────────────────────────────────────────
 const DUMMY = {
   home: {
     title: "AI Fraud Detection System",
@@ -87,7 +86,7 @@ const DUMMY = {
   },
 };
 
-// ─── HTTP Helpers ────────────────────────────────────────
+
 async function get(path) {
   try {
     const res = await fetch(`${BASE_URL}${path}`);
@@ -112,7 +111,6 @@ async function post(path, body) {
   }
 }
 
-// ─── Public API ──────────────────────────────────────────
 export async function fetchHome() {
   return (await get("/api/home")) ?? DUMMY.home;
 }
